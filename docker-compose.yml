@@ -1,0 +1,37 @@
+version: "3"
+
+services:
+  busman:
+      container_name: business_server
+      build: ./BusinessServer/
+      #image: airnh/bases:webdev
+      privileged: true
+      stdin_open: true # docker run -i
+      tty: true        # docker run -t
+      volumes:
+        - ./BusinessServer/projects:/home/projects
+      network_mode: bridge
+      # links:
+      #   - "webgcs_msgserver:msgserver"
+      ports:
+        - "8080:3000" # react app
+        - "80:4000"
+        - "81:4001"
+      #entrypoint: ["yarn", "install", "&&" , "yarn", "start"]
+      # entrypoint: ["bash", "run.sh"]
+      links:
+        - mongo
+  mongo:
+      container_name: mongo
+      image: mongo
+      privileged: true
+      stdin_open: true # docker run -i
+      tty: true        # docker run -t
+      environment:
+        MONGO_INITDB_ROOT_USERNAME: admin
+        MONGO_INITDB_ROOT_PASSWORD: admin
+      # ports:
+      # - '27017:27017'
+      network_mode: bridge
+
+
