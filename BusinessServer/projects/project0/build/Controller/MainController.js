@@ -37,10 +37,10 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.logIP = exports.filterBadIP = void 0;
-var Utils_1 = require("./Gateway/Utils");
-var BlackListDBHandles_1 = require("../DBBridge/BlackListDBHandles");
-var ShortTermMemory_1 = require("./Gateway/ShortTermMemory");
-var LogDBHandles_1 = require("../DBBridge/LogDBHandles");
+var Utils_1 = require("./DBBridge/Gateway/Utils");
+var BlackListDBHandles_1 = require("../DBBridge/Gateway/BlackListDBHandles");
+var ShortTermMemory_1 = require("./DBBridge/Gateway/ShortTermMemory");
+var LogDBHandles_1 = require("../DBBridge/Gateway/LogDBHandles");
 function filterBadIP(socket) {
     return __awaiter(this, void 0, void 0, function () {
         var _a, ip, port, good2go, blackList, i, blackIP;

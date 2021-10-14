@@ -57,7 +57,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ShortTermMemory = void 0;
 var Utils_1 = require("./Utils");
-var BlackListDBHandles_1 = require("../../DBBridge/BlackListDBHandles");
+var BlackListDBHandles_1 = require("../../DBBridge/Gateway/BlackListDBHandles");
 var policy_bl = __importStar(require("./GateWayPolicy"));
 var ShortTermMemory = /** @class */ (function () {
     function ShortTermMemory() {

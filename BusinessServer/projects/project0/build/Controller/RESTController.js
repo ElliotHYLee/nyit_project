@@ -56,9 +56,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteAllBlackList = exports.getAllBlackList = exports.deleteIP = exports.deleteAllLogs = exports.showLogs = exports.basicConnection = void 0;
-var LogDBHandles_1 = require("../DBBridge/LogDBHandles");
-var BlackListDBHandles_1 = require("../DBBridge/BlackListDBHandles");
-var ctrl = __importStar(require("../Controller/MainController"));
+var LogDBHandles_1 = require("../DBBridge/Gateway/LogDBHandles");
+var BlackListDBHandles_1 = require("../DBBridge/Gateway/BlackListDBHandles");
+var ctrl = __importStar(require("./DBBridge/Gateway/MainController"));
 function basicConnection(req, res) {
     return __awaiter(this, void 0, void 0, function () {
         var _a, ip, port, good2go;
@@ -68,6 +68,10 @@ function basicConnection(req, res) {
                 case 1:
                     _a = _b.sent(), ip = _a[0], port = _a[1], good2go = _a[2];
                     ctrl.logIP(ip, port, good2go);
+                    if (good2go)
+                        res.send("hi");
+                    else
+                        res.send("you are probably blocked");
                     return [2 /*return*/];
             }
         });
