@@ -8,15 +8,25 @@ import {
 import { TravelType, UserInfoType } from "./Session/UserSession"
 import * as ticketAPI from "./DBBridge/Tickets/TicketHandle"
 import { SessionManager } from "./Session/SessionMan"
+import { connect2busdb, createDummySchedules } from "./DBBridge/Bus/BUSDBHandle"
 
-ticketAPI.connect2ticketdb()
-connect2userinfodb()
 
-async function t0() {
-  await createDummyUserInfo()
+connect2busdb()
+async function dummyBusSchedule(){
+	var result = await createDummySchedules()
 }
+dummyBusSchedule()
 
-t0()
+
+
+// ticketAPI.connect2ticketdb()
+// connect2userinfodb()
+
+// async function t0() {
+//   await createDummyUserInfo()
+// }
+
+// t0()
 
 // update
 
