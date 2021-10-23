@@ -1,22 +1,22 @@
-// import {
-//   connect2userinfodb,
-//   createDummyUserInfo,
-//   deleteAllUserInfo,
-//   findAllUserInfo,
-//   findUserByEmail,
-// } from "./DBBridge/UserInfo/UserInfoDBHandle"
-// import { TravelType, UserInfoType } from "./Session/UserSession"
-// import * as ticketAPI from "./DBBridge/Tickets/TicketHandle"
-// import { SessionManager } from "./Session/SessionMan"
+import {
+  connect2userinfodb,
+  createDummyUserInfo,
+  deleteAllUserInfo,
+  findAllUserInfo,
+  findUserByEmail,
+} from "./DBBridge/UserInfo/UserInfoDBHandle"
+import { TravelType, UserInfoType } from "./Session/UserSession"
+import * as ticketAPI from "./DBBridge/Tickets/TicketHandle"
+import { SessionManager } from "./Session/SessionMan"
 
-// ticketAPI.connect2ticketdb()
-// connect2userinfodb()
+ticketAPI.connect2ticketdb()
+connect2userinfodb()
 
-// async function t0() {
-//   await createDummyUserInfo()
-// }
+async function t0() {
+  await createDummyUserInfo()
+}
 
-// // t0()
+t0()
 
 // async function zz() {
 //   var x: TravelType = {
