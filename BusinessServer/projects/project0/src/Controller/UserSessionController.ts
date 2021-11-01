@@ -38,7 +38,6 @@ export async function createUserSession(user_email: any, tokenPack: any) {
   if (isLogged) {
     SessionManager.Instnace().endUserSessionByIndex(index)
   }
-
   // find user_info from mongo
   var user_info_raw = (await findUserByEmail(user_email))[0]
   // create user_info type
@@ -54,9 +53,7 @@ export async function createUserSession(user_email: any, tokenPack: any) {
   // find user's travel info from mongo
   var tickets: [] = await ticketAPI.findTicketByEmail(user_info.user_email)
 
-	console.log(tickets)
-	console.log(tickets.length )
-	console.log("==============")
+
   // create travels type
   var travels: TravelType[] = []
   if (tickets.length > 0) {
