@@ -29,12 +29,18 @@ export async function loginProcess(root: any, args: any, context: any, info: any
 }
 
 export async function createNewUser(root: any, args: any, context: any, info: any) {
+  console.log('create new user request being handled')
   var data_raw = args.data
   var data = JSON.parse(data_raw)
+  console.log(data)
 
   // create keycloak id
   var res = await kc.createUser(data.user_email, data.pw)
-  if (res.status == -1) return GQLDrainError()
+  if (res.status == -1){ 
+	console.log("err")
+	return GQLDrainError()
+
+}
   console.log("user created in KC")
 
   // get token from kc

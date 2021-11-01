@@ -1,12 +1,14 @@
 let adminID = "admin"
 let adminPW = "admin"
 let port = "8080"
-let serverAddr = `http://13.52.213.117/:${port}/auth`
+let serverIP = `13.52.213.117`
+let serverAddr = `http://13.52.213.117:${port}/auth`
 
 export let opt = {
   adminID,
   adminPW,
   serverAddr,
+  serverIP,
 }
 
 export interface ConfigType {

@@ -92,13 +92,17 @@ function createNewUser(root, args, context, info) {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
+                    console.log('create new user request being handled');
                     data_raw = args.data;
                     data = JSON.parse(data_raw);
+                    console.log(data);
                     return [4 /*yield*/, kc.createUser(data.user_email, data.pw)];
                 case 1:
                     res = _a.sent();
-                    if (res.status == -1)
+                    if (res.status == -1) {
+                        console.log("err");
                         return [2 /*return*/, (0, GQLExit_1.GQLDrainError)()];
+                    }
                     console.log("user created in KC");
                     return [4 /*yield*/, (0, UserSessionController_1.getUserToken)(args)];
                 case 2:

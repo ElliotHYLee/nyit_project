@@ -65,7 +65,7 @@ var GQLApp = /** @class */ (function () {
         this.server = new graphql_yoga_1.GraphQLServer({
             typeDefs: GQLTypes_1.typeDefs,
             resolvers: GQLResolvers_1.resolvers,
-            context: this.gqlMiddleware,
+            //context: this.gqlMiddleware,
         });
     }
     GQLApp.prototype.gqlMiddleware = function (req) {

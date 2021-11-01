@@ -216,11 +216,12 @@ function createUser(userName, userPw) {
                     return [4 /*yield*/, hasUserName(courseName, userName)];
                 case 2:
                     x = _a.sent();
+                    console.log(x.data.hasUser);
                     if (x.data.hasUser)
                         return [2 /*return*/, { status: -1, data: "user already exists" }];
                     options = {
                         method: "POST",
-                        hostname: "52.53.210.87",
+                        hostname: Options_1.opt.serverIP,
                         port: "8080",
                         path: "/auth/admin/realms/" + courseName + "/users",
                         headers: {
@@ -255,7 +256,7 @@ function createUser(userName, userPw) {
                     if (x.data.hasUser)
                         return [2 /*return*/, { status: 1, data: "user has been crated" }];
                     else
-                        return [2 /*return*/, { status: -1, data: "sth wrong" }];
+                        return [2 /*return*/, { status: -1, data: "sth wrong during user creation" }];
                     return [2 /*return*/];
             }
         });

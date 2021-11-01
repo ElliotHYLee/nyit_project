@@ -122,11 +122,13 @@ export async function createUser(userName: string, userPw: string): Promise<any>
   var courseName: string = "master"
   var token = await requestAdminToken()
   var x = await hasUserName(courseName, userName)
+  console.log(x.data.hasUser)
   if (x.data.hasUser) return { status: -1, data: "user already exists" }
+
 
   var options = {
     method: "POST",
-    hostname: "52.53.210.87",
+    hostname: opt.serverIP,//"52.53.210.87",
     port: "8080",
     path: `/auth/admin/realms/${courseName}/users`,
     headers: {
@@ -156,9 +158,11 @@ export async function createUser(userName: string, userPw: string): Promise<any>
     notBefore: 0,
   })
 
+  
   var result: any = nativeRequest(options, data)
+  
 
   var x = await hasUserName(courseName, userName)
   if (x.data.hasUser) return { status: 1, data: "user has been crated" }
-  else return { status: -1, data: "sth wrong" }
+  else return { status: -1, data: "sth wrong during user creation" }
 }
