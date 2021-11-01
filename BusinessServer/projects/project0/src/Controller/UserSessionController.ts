@@ -16,7 +16,7 @@ export async function getUserToken(raw: any) {
   console.log("getting kc")
   console.log(user_email)
   var result = await kc.requestClientToken(user_email, pw)
-  //   console.log(result)
+  console.log(result)
   if (result.status == -1) return { status: -1, data: {} }
 
   var token = result.data.access_token
