@@ -13,10 +13,7 @@ export async function getUserToken(raw: any) {
   var pw: string = data.pw
 
   // get keycloack user token
-  console.log("getting kc")
-  console.log(user_email)
   var result = await kc.requestClientToken(user_email, pw)
-  console.log(result)
   if (result.status == -1) return { status: -1, data: {} }
 
   var token = result.data.access_token
@@ -30,13 +27,13 @@ export async function getUserToken(raw: any) {
     expiration: expiration.toISOString().slice(0, 19),
     duration: duration_sec,
   }
-  console.log("returning user email and token")
-  
+ 
   return { status: 1, data: { user_email: data.user_email, tokenPack: tokenPack } } //[user_email, tokenPack]
 }
 
 export async function createUserSession(user_email: any, tokenPack: any) {
   //check if sessionis already there
+  console.log(user_email)
   var [isLogged, index] = SessionManager.Instnace().userIsLogged(user_email)
   if (isLogged) {
     SessionManager.Instnace().endUserSessionByIndex(index)
