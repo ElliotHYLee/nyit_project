@@ -73,6 +73,7 @@ function getUserToken(raw) {
                     pw = data.pw;
                     // get keycloack user token
                     console.log("getting kc");
+                    console.log(user_email);
                     return [4 /*yield*/, kc.requestClientToken(user_email, pw)
                         //   console.log(result)
                     ];
