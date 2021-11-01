@@ -30,7 +30,7 @@ export async function getUserToken(raw: any) {
     expiration: expiration.toISOString().slice(0, 19),
     duration: duration_sec,
   }
-
+  console.log("returning user email and token")
   return { status: 1, data: { user_email: user_email, tokenPack: tokenPack } } //[user_email, tokenPack]
 }
 
