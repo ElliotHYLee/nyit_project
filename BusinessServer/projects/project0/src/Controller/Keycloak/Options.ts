@@ -1,7 +1,7 @@
 let adminID = "admin"
 let adminPW = "admin"
 let port = "8080"
-let serverAddr = `http://52.53.210.87:${port}/auth`
+let serverAddr = `http://13.52.213.117:${port}/auth`
 
 export let opt = {
   adminID,
