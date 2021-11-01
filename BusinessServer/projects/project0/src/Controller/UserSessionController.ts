@@ -31,7 +31,7 @@ export async function getUserToken(raw: any) {
     duration: duration_sec,
   }
   console.log("returning user email and token")
-  return { status: 1, data: { user_email: user_email, tokenPack: tokenPack } } //[user_email, tokenPack]
+  return { status: 1, data: { user_email: data.user_email, tokenPack: tokenPack } } //[user_email, tokenPack]
 }
 
 export async function createUserSession(user_email: any, tokenPack: any) {
