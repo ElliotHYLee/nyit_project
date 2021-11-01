@@ -22,7 +22,7 @@ export async function loginProcess(root: any, args: any, context: any, info: any
   // get user token
   var result = await getUserToken(args)
   if (result.status == -1) return GQLDrainError()
-
+  console.log('am i here login process after userToken')
   // create session
   await createUserSession(result.data.user_email, result.data.tokenPack)
   return GQLDrain(result.status, result.data.tokenPack)
