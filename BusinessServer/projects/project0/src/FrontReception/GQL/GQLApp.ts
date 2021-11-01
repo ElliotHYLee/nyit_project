@@ -9,7 +9,7 @@ export class GQLApp {
     this.server = new GraphQLServer({
       typeDefs,
       resolvers,
-      context: this.gqlMiddleware,
+      //context: this.gqlMiddleware,
     })
   }
 

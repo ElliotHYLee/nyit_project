@@ -4,7 +4,7 @@ exports.baseConfig = exports.opt = void 0;
 var adminID = "admin";
 var adminPW = "admin";
 var port = "8080";
-var serverAddr = "http://52.53.210.87:" + port + "/auth";
+var serverAddr = "http://13.52.213.117:" + port + "/auth";
 exports.opt = {
     adminID: adminID,
     adminPW: adminPW,
